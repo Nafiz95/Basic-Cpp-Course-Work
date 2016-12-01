@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+
+int main()
+{
+    //DECLARATION
+    int A[5];
+    int n = 5;
+
+    //POPULATE
+    srand(time(NULL));
+    int ll = 0, ul = 9;
+    for (int i = 0;i < n;i++)
+        A[i] = ll + rand() % (ul - ll + 1);
+
+    //DISPLAY
+    cout<<"Array: ";
+    for (int i = 0;i < n;i++)
+        cout<<A[i]<<" ";
+    cout<<endl;
+
+    //TAKE INPUT
+    int x;
+    cout<<"Enter number to look for: ";
+    cin>>x;
+
+    //LINEAR SEARCH
+    int i;
+    for (i = 0;i < n;i++)
+    {
+        if (x == A[i])
+        {
+            cout<<x<<" found at location "
+                <<i<<endl;
+            break;
+        }
+    }
+    if (i == n) cout<<x<<" not found\n";
+
+    return 0;
+}
+
